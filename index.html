@@ -95,9 +95,9 @@
   @media(max-width:900px){ .trace{display:none;} }
 
   /* ---------- HERO ---------- */
-  section{position:relative;padding:140px 0 100px;}
+  section{position:relative;padding:100px 0 70px;}
   .hero{
-    min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+    min-height:82vh;display:flex;flex-direction:column;justify-content:center;
     padding-top:120px;
   }
   .eyebrow{
@@ -128,7 +128,7 @@
   .btn-ghost{color:var(--text);}
   .btn-ghost:hover{border-color:var(--signal);color:var(--signal);}
 
-  .stat-row{display:flex;gap:40px;margin-top:64px;flex-wrap:wrap;}
+  .stat-row{display:flex;gap:40px;margin-top:48px;flex-wrap:wrap;}
   .stat b{font-family:var(--font-display);font-size:28px;display:block;color:var(--text);}
   .stat span{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;}
 
@@ -194,6 +194,14 @@
   .proj-card ul{margin-top:16px;padding-left:18px;color:var(--text-muted);font-size:14.5px;}
   .proj-card ul li{margin-bottom:7px;}
   .proj-card ul li::marker{color:var(--signal);}
+  .proj-links{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;position:relative;z-index:2;}
+  .proj-links a{
+    font-family:var(--font-mono);font-size:12px;color:var(--text);
+    border:1px solid var(--border);padding:7px 14px;border-radius:20px;
+    display:inline-flex;align-items:center;gap:7px;transition:all .2s ease;background:var(--surface-2);
+  }
+  .proj-links a:hover{border-color:var(--signal);color:var(--signal);}
+  .proj-links a.demo:hover{border-color:var(--copper);color:var(--copper);}
 
   /* ---------- RESEARCH ---------- */
   .research-card{
@@ -221,7 +229,10 @@
   .course-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
   .course-tags span{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);border:1px solid var(--border);padding:3px 9px;border-radius:20px;}
 
-  .misc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;}
+  .misc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:36px;}
+  .misc-grid .info-card ul{padding-left:16px;}
+  .misc-grid .info-card ul li{margin-bottom:6px;}
+  @media(max-width:900px){.misc-grid{grid-template-columns:1fr 1fr;}}
   .misc-grid .info-card{font-family:var(--font-body);}
   .misc-grid h4{font-family:var(--font-mono);font-size:12px;color:var(--copper);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
   .misc-grid p{color:var(--text-muted);font-size:14px;}
@@ -353,7 +364,7 @@
 
 <div class="boot" id="boot">
   <div class="boot-line" id="bootL1">&gt; booting aman_gupta.dev ...</div>
-  <div class="boot-line" id="bootL2">&gt; loading modules: react, node, pytorch, tensorflow ...</div>
+  <div class="boot-line" id="bootL2">&gt; loading modules: react, node, pytorch, tensorflow, langchain ...</div>
   <div class="boot-line" id="bootL3">&gt; compiling portfolio<span class="boot-cursor"></span></div>
 </div>
 
@@ -388,16 +399,17 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="eyebrow">AVAILABLE FOR SDE ROLES &amp; INTERNSHIPS</div>
+    <div class="eyebrow">OPEN TO SDE, AI/ML &amp; DATA ROLES</div>
     <h1 class="name" id="heroName" aria-label="Aman Gupta">Aman Gupta</h1>
     <div class="role-line" id="roleLine"><span id="roleText"></span><span class="cursor"></span></div>
-    <p class="hero-desc">Final-year Electronics &amp; Computer Engineering student at VIT Chennai. I build production-style full-stack applications and deep learning systems — one published at an international conference — and I'm looking to bring that range to a software engineering team.</p>
+    <p class="hero-desc">Final-year Electronics &amp; Computer Engineering student at VIT Chennai (CGPA 8.98) who ships systems end to end — full-stack platforms, deep learning models, GenAI/RAG pipelines, and data analytics dashboards — from raw data and model training through to a production-ready API or UI. Research accepted at an international conference; top 0.14% at Adobe's 2026 university hackathon.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View projects →</a>
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
     </div>
     <div class="stat-row">
       <div class="stat"><b data-count="8.98" data-decimals="2">0.00</b><span>CGPA</span></div>
+      <div class="stat"><b data-count="5">0</b><span>Projects shipped</span></div>
       <div class="stat"><b data-count="1">0</b><span>Published paper</span></div>
       <div class="stat"><b>2027</b><span>Graduating</span></div>
     </div>
@@ -410,15 +422,15 @@
     <div class="about-grid" data-reveal>
       <div>
         <p>I came up through <b>Electronics &amp; Computer Engineering</b>, which means I think about systems end to end — from how a signal moves to how a request moves through a backend. Competitive programming and a strong DSA foundation sit underneath everything I build.</p>
-        <p>Outside coursework, I've shipped a <b>production-style full-stack platform</b> end-to-end, and built multiple deep learning systems — including a <b>CNN-based diagnosis model</b> that was accepted and presented at an international conference. I move comfortably between machine learning, backend engineering, and model building.</p>
-        <p>Right now I'm focused on landing a <b>software engineering role</b>, sharpening DSA and system design, and shipping projects that hold up under interview-level scrutiny.</p>
+        <p>I've shipped a <b>production-style full-stack platform</b> (FitLoop) with real-time features, a <b>hybrid RAG chatbot</b> that combines dense + keyword retrieval with cross-encoder reranking, an <b>end-to-end BI pipeline</b> (SalesIQ) taking raw sales data to a Power BI dashboard through a PostgreSQL star-schema warehouse, and multiple deep learning systems — including a <b>CNN-based diagnosis model</b> accepted and presented at an international conference.</p>
+        <p>I move comfortably across <b>full-stack engineering, applied GenAI/RAG, and data engineering</b> — and I'm looking to bring that range to a software engineering, AI/ML, or data-focused team.</p>
       </div>
       <div class="info-card">
         <div class="row"><span>Location</span><b>Chennai, India</b></div>
         <div class="row"><span>Education</span><b>VIT Chennai</b></div>
         <div class="row"><span>Degree</span><b>B.Tech ECE</b></div>
         <div class="row"><span>Graduating</span><b>2027</b></div>
-        <div class="row"><span>Focus</span><b>SDE / Full-Stack</b></div>
+        <div class="row"><span>Focus</span><b>SDE / AI-ML / Data</b></div>
         <div class="row"><span>Languages</span><b>English, Hindi</b></div>
       </div>
     </div>
@@ -435,15 +447,27 @@
       </div>
       <div class="pin-row">
         <div class="pin-label">Frameworks</div>
-        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Scikit-learn</span><span class="chip">Streamlit</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Scikit-learn</span><span class="chip">Streamlit</span></div></div></div>
+        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Scikit-learn</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Scikit-learn</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span></div></div></div>
       </div>
       <div class="pin-row">
         <div class="pin-label">AI / ML</div>
-        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">Deep Learning</span><span class="chip">Neural Networks</span><span class="chip">Feature Engineering</span><span class="chip">Predictive Modeling</span><span class="chip">Deep Learning</span><span class="chip">Neural Networks</span><span class="chip">Feature Engineering</span><span class="chip">Predictive Modeling</span></div></div></div>
+        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">Deep Learning</span><span class="chip">CNNs</span><span class="chip">Neural Networks</span><span class="chip">Feature Engineering</span><span class="chip">Predictive Modeling</span><span class="chip">Deep Learning</span><span class="chip">CNNs</span><span class="chip">Neural Networks</span><span class="chip">Feature Engineering</span><span class="chip">Predictive Modeling</span></div></div></div>
+      </div>
+      <div class="pin-row">
+        <div class="pin-label">GenAI &amp; RAG</div>
+        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">LangChain</span><span class="chip">LLMs (Gemini)</span><span class="chip">Hybrid Retrieval</span><span class="chip">Cross-Encoder Reranking</span><span class="chip">ChromaDB</span><span class="chip">Prompt Engineering</span><span class="chip">HF Embeddings</span><span class="chip">LangChain</span><span class="chip">LLMs (Gemini)</span><span class="chip">Hybrid Retrieval</span><span class="chip">Cross-Encoder Reranking</span><span class="chip">ChromaDB</span><span class="chip">Prompt Engineering</span><span class="chip">HF Embeddings</span></div></div></div>
+      </div>
+      <div class="pin-row">
+        <div class="pin-label">Data &amp; Backend</div>
+        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">REST APIs</span><span class="chip">ETL Pipelines</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Power BI</span><span class="chip">Data Quality Validation</span><span class="chip">REST APIs</span><span class="chip">ETL Pipelines</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Power BI</span><span class="chip">Data Quality Validation</span></div></div></div>
+      </div>
+      <div class="pin-row">
+        <div class="pin-label">Databases</div>
+        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">PostgreSQL</span><span class="chip">Oracle SQL</span><span class="chip">MongoDB</span><span class="chip">Star-Schema Design</span><span class="chip">PostgreSQL</span><span class="chip">Oracle SQL</span><span class="chip">MongoDB</span><span class="chip">Star-Schema Design</span></div></div></div>
       </div>
       <div class="pin-row">
         <div class="pin-label">Tools</div>
-        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">Git / GitHub</span><span class="chip">PostgreSQL</span><span class="chip">Oracle SQL</span><span class="chip">Socket.IO</span><span class="chip">JWT Auth</span><span class="chip">Google Colab</span><span class="chip">Git / GitHub</span><span class="chip">PostgreSQL</span><span class="chip">Oracle SQL</span><span class="chip">Socket.IO</span><span class="chip">JWT Auth</span><span class="chip">Google Colab</span></div></div></div>
+        <div class="pin-values"><div class="marquee"><div class="marquee-track"><span class="chip">Git / GitHub</span><span class="chip">Socket.IO</span><span class="chip">JWT Auth</span><span class="chip">VS Code</span><span class="chip">Google Colab</span><span class="chip">Git / GitHub</span><span class="chip">Socket.IO</span><span class="chip">JWT Auth</span><span class="chip">VS Code</span><span class="chip">Google Colab</span></div></div></div>
       </div>
     </div>
   </section>
@@ -458,6 +482,26 @@
       <span class="proj-tag">U1</span>
       <div class="proj-head">
         <div>
+          <h3>Document Chatbot — Hybrid RAG System</h3>
+          <div class="proj-stack"><span>Python</span><span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>React</span></div>
+        </div>
+      </div>
+      <ul>
+        <li>Built a full-stack retrieval-augmented chatbot answering questions over uploaded PDF, Word, PowerPoint, and Excel documents, with per-session isolated vector stores for multi-user safety.</li>
+        <li>Designed a hybrid retrieval pipeline combining dense vector search (ChromaDB, HuggingFace embeddings) with BM25 keyword search, merged by document identity.</li>
+        <li>Added a cross-encoder reranking stage (BAAI/bge-reranker-base) with score thresholds, returning an explicit "not enough information" response instead of hallucinating.</li>
+        <li>Engineered a context-restricted Gemini prompt that flags conflicting information across sources rather than silently resolving it, with a source list appended after generation.</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/ga2495/document-chatbot-rag" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-glow"></div>
+      <span class="proj-tag">U2</span>
+      <div class="proj-head">
+        <div>
           <h3>FitLoop — Full-Stack Fitness Platform</h3>
           <div class="proj-stack"><span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Socket.IO</span></div>
         </div>
@@ -467,11 +511,35 @@
         <li>Implemented real-time features — live workout updates, chat and notifications — using Socket.IO.</li>
         <li>Designed a normalized relational schema and RESTful API architecture, then deployed the application end-to-end.</li>
       </ul>
+      <div class="proj-links">
+        <a href="https://github.com/ga2495/gym-buddy" target="_blank" rel="noopener">⌥ GitHub</a>
+        <a class="demo" href="https://gym-buddy-taupe.vercel.app/login" target="_blank" rel="noopener">↗ Live Demo</a>
+      </div>
     </div>
 
     <div class="proj-card" data-reveal>
       <div class="proj-glow"></div>
-      <span class="proj-tag">U2</span>
+      <span class="proj-tag">U3</span>
+      <div class="proj-head">
+        <div>
+          <h3>SalesIQ — Business Sales Intelligence &amp; Analytics System</h3>
+          <div class="proj-stack"><span>Python</span><span>PostgreSQL</span><span>SQL</span><span>Power BI</span></div>
+        </div>
+      </div>
+      <ul>
+        <li>Developed an end-to-end sales analytics and BI system using Python ETL pipelines to extract, clean, validate, transform, and load multi-source sales data into a PostgreSQL star-schema data warehouse.</li>
+        <li>Implemented data quality checks, deduplication, referential-integrity validation, and automated rejection logging, achieving a 98.35% data-quality score.</li>
+        <li>Built advanced SQL analytics using CTEs, subqueries, joins, window functions, LAG/LEAD, and RANK/DENSE_RANK to generate business KPIs.</li>
+        <li>Created Power BI dashboards for revenue, profit, margins, orders, customers, products, regions, and sales representatives.</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/ga2495/SalesIQ" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj-card" data-reveal>
+      <div class="proj-glow"></div>
+      <span class="proj-tag">U4</span>
       <div class="proj-head">
         <div>
           <h3>Mango Leaf Disease Diagnosis &amp; Precision Irrigation</h3>
@@ -483,11 +551,15 @@
         <li>Owned the full ML pipeline — data collection, preprocessing, model training, evaluation, and optimization.</li>
         <li>Presented the work at an international conference; the research was accepted for publication.</li>
       </ul>
+      <div class="proj-links">
+        <a href="https://github.com/ga2495/mango-leaf-disease-detector" target="_blank" rel="noopener">⌥ GitHub</a>
+        <a class="demo" href="https://mango-leaf-disease-detector-aman.streamlit.app/" target="_blank" rel="noopener">↗ Live Demo</a>
+      </div>
     </div>
 
     <div class="proj-card" data-reveal>
       <div class="proj-glow"></div>
-      <span class="proj-tag">U3</span>
+      <span class="proj-tag">U5</span>
       <div class="proj-head">
         <div>
           <h3>Fastest Route Prediction &amp; Personalized Navigation</h3>
@@ -498,6 +570,10 @@
         <li>Modeled real-world road networks as graphs using NetworkX and OSMnx, and trained a PyTorch model to predict travel time along road segments.</li>
         <li>Added multiple routing modes — fastest, fuel-efficient, and safest — with configurable highway and toll preferences, using custom graph search logic.</li>
       </ul>
+      <div class="proj-links">
+        <a href="https://github.com/ga2495/Fastest-Route-Prediction" target="_blank" rel="noopener">⌥ GitHub</a>
+        <a class="demo" href="https://fastest-route-prediction-aman.streamlit.app/" target="_blank" rel="noopener">↗ Live Demo</a>
+      </div>
     </div>
   </section>
 
@@ -533,12 +609,20 @@
 
     <div class="misc-grid" data-reveal>
       <div class="info-card">
-        <h4>Certification</h4>
-        <p>Infosys Springboard — Machine Learning Implementation</p>
+        <h4>Certifications</h4>
+        <ul>
+          <li>IBM Advanced GenAI — Professional</li>
+          <li>Oracle Cloud Infrastructure Certified AI Foundations Associate</li>
+          <li>Infosys Springboard — Machine Learning Implementation</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>Achievement</h4>
+        <p>Shortlisted among 416 of 3,01,066 teams (Top 0.14%) in the Adobe University Hackathon 2026.</p>
       </div>
       <div class="info-card">
         <h4>Leadership</h4>
-        <p>Core Member, Sports Club at VIT Chennai</p>
+        <p>Core Member, Sports Club at VIT Chennai.</p>
       </div>
     </div>
   </section>
@@ -566,7 +650,7 @@
   }, {passive:true});
 
   // typing effect for role line
-  const roles = ['Full-stack development', 'Deep learning research', 'Competitive programming', 'System design'];
+  const roles = ['Full-stack development', 'GenAI & RAG systems', 'Deep learning research', 'Data analytics & BI', 'Competitive programming', 'System design'];
   const roleText = document.getElementById('roleText');
   let roleIdx = 0, charIdx = 0, deleting = false;
 
